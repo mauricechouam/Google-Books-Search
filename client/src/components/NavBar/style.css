@@ -1,5 +1,5 @@
 nav {
-    background-color: rgb(255,143,111)
+    background-color: rgb(231, 88, 112)
 }
 
 a {
@@ -8,7 +8,7 @@ a {
 }
  a:hover {
     text-decoration: underline;
-    color: white
+    color: rgb(146, 219, 117)
 }
 
 .navbar-brand {
@@ -18,3 +18,4 @@ a {
 .nav-item {
     font-size: 25px;
 }
+
