@@ -1,7 +1,9 @@
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #fffafa;
+  padding: 0;
+  font-family: sans-serif;
+  background-image: url(https://cdn12.picryl.com/photo/2016/12/31/books-education-school-education-e01750-1024.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
