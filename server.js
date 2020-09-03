@@ -1,29 +1,32 @@
+// EXPRESS SERVER entry point for app //
+// dependencies
 const express = require("express");
 const mongoose = require("mongoose");
-const apiRoutes = require("./routes/index");
-const path = require("path");
+const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Define middleware here
+// Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// Serve up static assets (usually on heroku)
+
+// Server enviroment logic, update for production
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+    app.use(express.static("client/build"));
 }
 
-// Define API routes here
-app.use('/api', apiRoutes);
+// API routes
+app.use(routes);
 
-// Send every other request to the React app
-// Define any API routes before this runs
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+// Mongo DB / Mongoose
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks",
+    {
+        useCreateIndex: true,
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    });
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks")
-
-app.listen(PORT, () => {
-  console.log(`🌎 ==> API server now on port ${PORT}!`);
+// Start server
+app.listen(PORT, function () {
+    console.log(`Listening on PORT ${PORT}!`);
 });
