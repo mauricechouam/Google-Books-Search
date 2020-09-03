@@ -3,14 +3,16 @@
   "version": "1.0.0",
   "description": "google-books-search",
   "main": "server.js",
+  "engines": {
+    "node": "14.5.0x"
+  },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "build": "cd client && npm run build",
     "install": "cd client && npm install",
-    "client": "cd client && npm run start",
-    "heroku-postbuild": "npm run install && npm run build"
+    "client": "cd client && npm run start"
+    
   },
   "author": "",
   "license": "ISC",
