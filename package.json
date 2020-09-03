@@ -4,7 +4,9 @@
   "description": "google-books-search",
   "main": "server.js",
   "engines": {
-    "node": "14.5.0x"
+    "node": "13.1.0",
+    "npm": "6.12.1",
+    "yarn": "1.19.1"
   },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -14,7 +16,7 @@
     "install": "cd client && npm install",
     "build": "cd client && npm run build"
   },
-  
+
   "author": "",
   "license": "ISC",
   "devDependencies": {
