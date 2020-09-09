@@ -5,6 +5,8 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "autoprefixer": "^9.8.6",
+    "colorette": "^1.2.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-router-dom": "^5.0.1",
