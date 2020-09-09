@@ -19,6 +19,13 @@ app.use(routes)
 
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", { useNewUrlParser: true });
+// Mongo DB / Mongoose
+mongoose.connect(process.env.MONGODB_URI || "mongodb://googlebook:pass123@ds259596.mlab.com:59596/heroku_r0htk00t",
+    {
+        useCreateIndex: true,
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    });
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);
