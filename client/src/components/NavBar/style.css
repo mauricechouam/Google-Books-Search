@@ -1,5 +1,5 @@
 nav {
-    background-color: rgb(255,143,111)
+    background-color: rgb(4, 48, 90)
 }
 
 a {
@@ -8,7 +8,7 @@ a {
 }
  a:hover {
     text-decoration: underline;
-    color: white
+    color: rgb(197, 12, 12)
 }
 
 .navbar-brand {
