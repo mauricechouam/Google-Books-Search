@@ -1,32 +1,25 @@
-// EXPRESS SERVER entry point for app //
-// dependencies
 const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
-const app = express();
-const PORT = process.env.PORT || 3001;
 
-// Middleware
+const PORT = process.env.PORT || 3001;
+const app = express();
+
+// Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Server enviroment logic, update for production
+// Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static("client/build"));
+  app.use(express.static("client/public"));
 }
 
-// API routes
-app.use(routes);
+// Define API routes here
+app.use(routes)
 
-// Mongo DB / Mongoose
-mongoose.connect(process.env.MONGODB_URI || "mongodb://googlebook:pass123@ds259596.mlab.com:59596/heroku_r0htk00t",
-    {
-        useCreateIndex: true,
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    });
+// Connect to the Mongo DB
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", { useNewUrlParser: true });
 
-// Start server
-app.listen(PORT, function () {
-    console.log(`Listening on PORT ${PORT}!`);
+app.listen(PORT, () => {
+  console.log(`🌎 ==> API server now on port ${PORT}!`);
 });
