@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes)
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", { useNewUrlParser: true });
+//mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", { useNewUrlParser: true });
 // Mongo DB / Mongoose
 mongoose.connect(process.env.MONGODB_URI || "mongodb://nixon:pass123@ds259596.mlab.com:59596/heroku_r0htk00t",
     {
