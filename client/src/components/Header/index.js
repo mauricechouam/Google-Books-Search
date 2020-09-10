@@ -5,7 +5,7 @@ function Header() {
     return (
         <div className="jumbotron text-center">
             <div className="container ">
-                <h1>Google Books Search</h1>
+                <h1></h1>
             </div>
         </div>
     );
